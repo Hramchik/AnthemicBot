@@ -91,8 +91,7 @@ class RequestForm(disnake.ui.Modal, commands.Cog):
             await inter.user.send(embed=requestCallBackEmbed)
             await reg(inter, requestEmbed_id)
         elif ids:
-            requestEmbed = 1
-            await reg(inter, requestEmbed)
+            await reg(inter, None)
 
 def replaceName(arg: str):
     if arg == "Nickname":
