@@ -45,8 +45,8 @@ class requestCallback(commands.Cog):
             rcon_password = config["RCON"]["password"]
 
             with MCRcon(rcon_host, rcon_password, port=rcon_port) as mcr:
-                mcr.command(f'whitelist add {nickname}')
-                print(f'successfully added in whitelist {nickname}')
+                mcr.command(f'whitelist add ' + str(nickname))
+                print(f'successfully added in whitelist ' + str(nickname))
 
             connection.commit()
             connection.close()

@@ -35,7 +35,7 @@ class SupportModal(disnake.ui.Modal, commands.Cog):
         embed = disnake.Embed(
             title="Создать тикет.",
             description="Если у вас возникла проблема или вам нужна помощь. Вы можете создать тикет, для этого нажмите на кнопку ниже. Команда поддержки свяжется с вами и постарается Вам помочь.",
-            color=0xffff00,
+            color=0xADFF2F,
         )
         await inter.channel.send(
             components=[

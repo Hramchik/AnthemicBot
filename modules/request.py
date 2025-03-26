@@ -44,9 +44,9 @@ class RequestForm(disnake.ui.Modal, commands.Cog):
     @commands.has_permissions(administrator=True)
     async def buttonsForm(self, inter: disnake.ApplicationCommandInteraction):
         embed = disnake.Embed(
-            title="Подача заявки",
-            description="",
-            colour=0xffff00,
+            title="Подать заявку.",
+            description="Заполните форму, чтобы начать играть на нашем замечательном сервере!",
+            colour=0xADFF2F,
         )
         await inter.channel.send(
             components=[
@@ -91,8 +91,7 @@ class RequestForm(disnake.ui.Modal, commands.Cog):
             await inter.user.send(embed=requestCallBackEmbed)
             await reg(inter, requestEmbed_id)
         elif ids:
-            requestEmbed = 1
-            await reg(inter, requestEmbed)
+            await reg(inter, None)
 
 def replaceName(arg: str):
     if arg == "Nickname":
