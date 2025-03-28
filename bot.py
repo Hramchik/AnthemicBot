@@ -10,14 +10,17 @@ from modules.request import RequestForm
 config = configparser.ConfigParser()
 config.read('config.ini', encoding='utf-8')
 
-bot = commands.InteractionBot(test_guilds=[int(config["Auth"]["guild_id"])], status=disnake.Status.do_not_disturb)
+bot = commands.InteractionBot(test_guilds=[int(config["Auth"]["guild_id"])])
 
 bot.load_extensions("modules")
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=disnake.Game(name=config["Auth"]["activity"]))
-    print("Bot enabled")
+     await bot.change_presence(activity=disnake.Activity(
+         type=disnake.ActivityType.streaming,
+         name=config["Auth"]["activity"],
+         url="https://www.youtube.com/watch?v=j-iheFkstFQ"
+     ))
 
 @bot.listen("on_button_click")
 async def support_listener(inter: disnake.MessageInteraction):

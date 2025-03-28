@@ -68,7 +68,7 @@ class RequestForm(disnake.ui.Modal, commands.Cog):
             requestEmbed = disnake.Embed(
                 title="Новая заявка!",
                 description=f"**Отправитель: {inter.user.global_name}**",
-                color=disnake.Colour.red(),
+                colour=0xADFF2F,
             )
             requestEmbed.set_thumbnail(url=inter.user.display_avatar.url)
             for key, value in inter.text_values.items():
