@@ -20,7 +20,9 @@ async def on_ready():
          type=disnake.ActivityType.streaming,
          name=config["Auth"]["activity"],
          url="https://www.youtube.com/watch?v=j-iheFkstFQ"
-     ))
+        )
+     )
+     print(f"Bot is ready! Logged in as {bot.user}")
 
 @bot.listen("on_button_click")
 async def support_listener(inter: disnake.MessageInteraction):
